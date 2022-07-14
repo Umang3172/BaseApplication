@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
 }
+apply plugin: 'kotlin-android'
 
 android {
     compileSdk 32
@@ -38,4 +39,9 @@ dependencies {
 
     //Smooth nav
     implementation 'com.github.ibrahimsn98:SmoothBottomBar:1.7.9'
+    implementation "androidx.core:core-ktx:+"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
+//repositories {
+//    mavenCentral()
+//}
