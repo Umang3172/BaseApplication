@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.baseapplication.Fragments.HomeFragment;
 import com.example.baseapplication.Fragments.ProfileFragment;
@@ -49,5 +51,10 @@ public class Bottom_nav extends AppCompatActivity {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frameLayout,fragment);
         transaction.commit();
+    }
+
+    public void addQuiz(View view) {
+        Intent intent = new Intent(this,CreateQuiz.class);
+        startActivity(intent);
     }
 }
