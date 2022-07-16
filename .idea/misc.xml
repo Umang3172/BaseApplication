@@ -8,11 +8,13 @@
         <entry key="..\:/Users/Umang Singh/OneDrive/Documents/GitHub/BaseApplication/app/src/main/res/drawable/ic_baseline_close_24.xml" value="0.192" />
         <entry key="..\:/Users/Umang Singh/OneDrive/Documents/GitHub/BaseApplication/app/src/main/res/drawable/ic_baseline_done_24.xml" value="0.212" />
         <entry key="..\:/Users/Umang Singh/OneDrive/Documents/GitHub/BaseApplication/app/src/main/res/layout/activity_bottom_nav.xml" value="0.20052083333333334" />
-        <entry key="..\:/Users/Umang Singh/OneDrive/Documents/GitHub/BaseApplication/app/src/main/res/layout/activity_create_quiz.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/Umang Singh/OneDrive/Documents/GitHub/BaseApplication/app/src/main/res/layout/activity_create_quiz.xml" value="0.2" />
+        <entry key="..\:/Users/Umang Singh/OneDrive/Documents/GitHub/BaseApplication/app/src/main/res/layout/activity_gateway_to_quiz_form.xml" value="0.264" />
         <entry key="..\:/Users/Umang Singh/OneDrive/Documents/GitHub/BaseApplication/app/src/main/res/layout/create_qna.xml" value="0.2" />
         <entry key="..\:/Users/Umang Singh/OneDrive/Documents/GitHub/BaseApplication/app/src/main/res/layout/fragment_home.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/Umang Singh/OneDrive/Documents/GitHub/BaseApplication/app/src/main/res/layout/item_view_question.xml" value="0.264" />
         <entry key="..\:/Users/Umang Singh/OneDrive/Documents/GitHub/BaseApplication/app/src/main/res/layout/item_view_quiz.xml" value="0.176" />
+        <entry key="..\:/Users/Umang Singh/OneDrive/Documents/GitHub/BaseApplication/app/src/main/res/layout/share_dialog_box.xml" value="0.2" />
       </map>
     </option>
   </component>
