@@ -1,5 +1,4 @@
 package com.example.baseapplication.cloud;
-import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Map;
 
@@ -8,13 +7,19 @@ public class Quizz {
     final Map<String, String> queMap;
     final String answer;
     final String title;
+    final String time;
 
 
-    public Quizz(String userId, Map<String, String> queMap, String answer, String title) {
+    public Quizz(String userId, Map<String, String> queMap, String answer, String title, String time) {
         this.userId = userId;
         this.queMap = queMap;
         this.answer = answer;
         this.title = title;
+        this.time = time;
+    }
+
+    public String getTime() {
+        return time;
     }
 
     public String getUserId() {

@@ -1,34 +1,27 @@
 package com.example.baseapplication.Activities;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.Dialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
-import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.baseapplication.Adapter.CreateQuestionDialog;
-import com.example.baseapplication.Adapter.HomeQuizAdapter;
 import com.example.baseapplication.Adapter.QuestionAdapter;
 import com.example.baseapplication.R;
 import com.example.baseapplication.cloud.FirebaseCloudStorage;
 import com.example.baseapplication.cloud.Questions;
 import com.example.baseapplication.cloud.Quizz;
-import com.example.baseapplication.cloud.User;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
@@ -48,6 +41,7 @@ public class CreateQuiz extends AppCompatActivity implements CreateQuestionDialo
     FirebaseFirestore firebaseFirestore;
     String uid;
     String quizTitle;
+    String timePerQuestion;
 
 
 
@@ -70,7 +64,8 @@ public class CreateQuiz extends AppCompatActivity implements CreateQuestionDialo
         time.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                String time_per_q = (String) adapterView.getItemAtPosition(i);
+                timePerQuestion = (String) adapterView.getItemAtPosition(i);
+                Log.d("time",timePerQuestion);
             }
 
             @Override
@@ -83,7 +78,8 @@ public class CreateQuiz extends AppCompatActivity implements CreateQuestionDialo
         firebaseFirestore = FirebaseFirestore.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
         uid = firebaseAuth.getUid();
-        quizTitle = title.getText().toString();
+//        quizTitle = title.getText().toString();
+//        Log.d("title",quizTitle);
         list = new ArrayList<>();
 
 
@@ -93,7 +89,7 @@ public class CreateQuiz extends AppCompatActivity implements CreateQuestionDialo
                 //Add quiz to firebase
                 for(Quizz q: list){
                     FirebaseCloudStorage cloudStorage = new FirebaseCloudStorage();
-                    cloudStorage.addQuiz(q.getUserId(),q.getQueMap(),q.getAnswer(),q.getTitle());
+                    cloudStorage.addQuiz(q.getUserId(),q.getQueMap(),q.getAnswer(),q.getTitle(), q.getTime());
                 }
 
             }
@@ -124,10 +120,12 @@ public class CreateQuiz extends AppCompatActivity implements CreateQuestionDialo
 
     @Override
     public void addQuestion( Map<String, String> queMap, String answer) {
-        Quizz q = new Quizz(uid,queMap,answer,quizTitle);
+        quizTitle = title.getText().toString();
+        Log.d("title",quizTitle);
+        Quizz q = new Quizz(uid,queMap,answer,quizTitle, timePerQuestion);
         list.add(q);
         FirebaseCloudStorage cloudStorage = new FirebaseCloudStorage();
-        cloudStorage.addQuiz(q.getUserId(),q.getQueMap(),q.getAnswer(),q.getTitle());
+        cloudStorage.addQuiz(q.getUserId(),q.getQueMap(),q.getAnswer(),q.getTitle(), q.getTime());
 
     }
     // For after clicking on recycler view
