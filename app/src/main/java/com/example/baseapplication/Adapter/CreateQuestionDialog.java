@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatDialogFragment;
 
@@ -21,12 +22,15 @@ import com.example.baseapplication.R;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.xml.parsers.SAXParser;
+
 
 public class CreateQuestionDialog extends AppCompatDialogFragment {
     private EditText q,a,b,c,d;
     private DialogListener listener;
     private ImageButton accept,cancel;
     private CheckBox oa,ob,oc,od;
+
 
 //    @Override
 //    public void onStart() {
@@ -65,6 +69,7 @@ public class CreateQuestionDialog extends AppCompatDialogFragment {
         ob = view.findViewById(R.id.optionB);
         oc = view.findViewById(R.id.optionC);
         od = view.findViewById(R.id.optionD);
+
 
         builder.setView(view).
                 setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
