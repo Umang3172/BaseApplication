@@ -17,6 +17,7 @@ import com.example.baseapplication.R;
 import java.util.zip.Inflater;
 
 public class ShareDialogAdapter extends AppCompatDialogFragment {
+    EditText url;
 
     public static ShareDialogAdapter newInstance(String msg) {
         ShareDialogAdapter fragment = new ShareDialogAdapter();
@@ -35,9 +36,9 @@ public class ShareDialogAdapter extends AppCompatDialogFragment {
         LayoutInflater inflater = getActivity().getLayoutInflater();
         View view = inflater.inflate(R.layout.create_qna, null);
 
-        EditText url = view.findViewById(R.id.share_link);
+        url = view.findViewById(R.id.url_edittext);
         url.setText(getArguments().getString("msg"));
-        //alertDialogBuilder.setMessage(getArguments().getString("msg"));//get Mesg here
+        alertDialogBuilder.setMessage(getArguments().getString("msg"));//get Mesg here
         return alertDialogBuilder.create();
     }
 }

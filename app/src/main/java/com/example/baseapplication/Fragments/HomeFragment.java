@@ -37,15 +37,22 @@ public class HomeFragment extends Fragment implements HomeQuizAdapter.onItemList
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         recyclerView = view.findViewById(R.id.home_quiz_rv);
-        share = view.findViewById(R.id.share_link);
-        btn = view.findViewById(R.id.btn);
+//        share = view.findViewById(R.id.share_link);
+//        btn = view.findViewById(R.id.btn);
 
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getActivity(), "Worked", Toast.LENGTH_SHORT).show();
-            }
-        });
+//        btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Toast.makeText(getActivity(), "Worked", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+
+//        btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//        });
 
         list = new ArrayList<>();
 
@@ -62,13 +69,6 @@ public class HomeFragment extends Fragment implements HomeQuizAdapter.onItemList
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(new HomeQuizAdapter(list,this));
 
-//        share.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-////                ShareDialogAdapter dFragment = new ShareDialogAdapter().newInstance("Url");
-////                dFragment.show(getActivity().getSupportFragmentManager(), "Frag");
-//            }
-//        });
 
         return view;
     }

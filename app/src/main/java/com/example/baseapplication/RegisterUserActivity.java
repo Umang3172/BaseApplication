@@ -67,6 +67,13 @@ public class RegisterUserActivity extends AppCompatActivity {
                 googleSignIn();
             }
         });
+
+        textLogIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(RegisterUserActivity.this, LoginUserActivity.class));
+            }
+        });
     }
 
     private void requestGoogleSignIn() {
