@@ -1,5 +1,6 @@
 package com.example.baseapplication.cloud;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class Quizz {
@@ -9,6 +10,14 @@ public class Quizz {
     final String title;
     final String time;
 
+    public Quizz(String title) {
+        this.title = title;
+        this.userId="0";
+        this.queMap=new HashMap<>();
+        this.answer="as";
+        this.time="100sec";
+
+    }
 
     public Quizz(String userId, Map<String, String> queMap, String answer, String title, String time) {
         this.userId = userId;

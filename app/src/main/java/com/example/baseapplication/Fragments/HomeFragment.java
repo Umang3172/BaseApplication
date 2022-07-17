@@ -41,7 +41,7 @@ public class HomeFragment extends Fragment implements HomeQuizAdapter.onItemList
 
         list = new ArrayList<>();
 
-//        list.add("hello");
+        list.add(new Quizz("hello"));
 //        list.add("hello");
 //        list.add("hello");
 //        list.add("hello");
