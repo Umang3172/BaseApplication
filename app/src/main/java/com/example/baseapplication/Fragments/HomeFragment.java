@@ -1,6 +1,7 @@
 package com.example.baseapplication.Fragments;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -58,7 +59,12 @@ public class HomeFragment extends Fragment implements HomeQuizAdapter.onItemList
     public void onClicked(int position) {
         // Add url in constructor .
 
-        ShareDialogAdapter dFragment = new ShareDialogAdapter().newInstance("Url");
+        Uri uri = Uri.parse("http://www.quizz.com/v1");
+//        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+//        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//        startActivity(intent);
+
+        ShareDialogAdapter dFragment = new ShareDialogAdapter().newInstance(uri.toString());
         dFragment.show(getActivity().getSupportFragmentManager(), "Frag");
     }
 }
