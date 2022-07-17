@@ -20,7 +20,7 @@ public class FirebaseCloudStorage {
         doc.put("answer", q.getAnswer());
         doc.put("title", q.getTitle());
         doc.put("time", q.getTime());
-        db.collection("questions").document().set(doc)
+        db.collection(title).document().set(doc)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {

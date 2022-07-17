@@ -4,11 +4,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Quizz {
-    final String userId;
-    final Map<String, String> queMap;
-    final String answer;
-    final String title;
-    final String time;
+     String userId;
+     Map<String, String> queMap;
+     String answer;
+     String title;
+     String time;
+
+    public Quizz(){}
 
     public Quizz(String title) {
         this.title = title;
