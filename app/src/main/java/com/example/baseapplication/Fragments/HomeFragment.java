@@ -19,15 +19,17 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.baseapplication.Activities.CreateQuiz;
+import com.example.baseapplication.Activities.Quiz;
 import com.example.baseapplication.Adapter.HomeQuizAdapter;
 import com.example.baseapplication.Adapter.ShareDialogAdapter;
 import com.example.baseapplication.R;
+import com.example.baseapplication.cloud.Quizz;
 
 import java.util.ArrayList;
 
 public class HomeFragment extends Fragment implements HomeQuizAdapter.onItemListener {
     private RecyclerView recyclerView;
-    private ArrayList<String> list;
+    private ArrayList<Quizz> list;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -39,12 +41,12 @@ public class HomeFragment extends Fragment implements HomeQuizAdapter.onItemList
 
         list = new ArrayList<>();
 
-        list.add("hello");
-        list.add("hello");
-        list.add("hello");
-        list.add("hello");
-        list.add("hello");
-        list.add("hello");
+//        list.add("hello");
+//        list.add("hello");
+//        list.add("hello");
+//        list.add("hello");
+//        list.add("hello");
+//        list.add("hello");
 
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getActivity(),2);
 
