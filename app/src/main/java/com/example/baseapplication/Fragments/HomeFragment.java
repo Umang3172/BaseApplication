@@ -27,8 +27,6 @@ import java.util.ArrayList;
 public class HomeFragment extends Fragment implements HomeQuizAdapter.onItemListener {
     private RecyclerView recyclerView;
     private ArrayList<String> list;
-    private ImageView share;
-    private Button btn;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -37,22 +35,6 @@ public class HomeFragment extends Fragment implements HomeQuizAdapter.onItemList
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         recyclerView = view.findViewById(R.id.home_quiz_rv);
-//        share = view.findViewById(R.id.share_link);
-//        btn = view.findViewById(R.id.btn);
-
-//        btn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Toast.makeText(getActivity(), "Worked", Toast.LENGTH_SHORT).show();
-//            }
-//        });
-
-//        btn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//            }
-//        });
 
         list = new ArrayList<>();
 
@@ -68,14 +50,15 @@ public class HomeFragment extends Fragment implements HomeQuizAdapter.onItemList
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(new HomeQuizAdapter(list,this));
-
-
         return view;
     }
 
 
     @Override
     public void onClicked(int position) {
+        // Add url in constructor .
 
+        ShareDialogAdapter dFragment = new ShareDialogAdapter().newInstance("Url");
+        dFragment.show(getActivity().getSupportFragmentManager(), "Frag");
     }
 }

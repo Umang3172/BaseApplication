@@ -24,6 +24,11 @@ public class Bottom_nav extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bottom_nav);
 
+        //testing
+//        Intent intent = new Intent(this,Quiz.class);
+//        startActivity(intent);
+
+
         replace(new HomeFragment());
         bottomBar = findViewById(R.id.bottomBar);
         bottomBar.setOnItemSelectedListener(new OnItemSelectedListener() {

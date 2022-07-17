@@ -14,7 +14,10 @@
         android:theme="@style/Theme.BaseApplication"
         tools:targetApi="31">
         <activity
-            android:name=".GatewayToQuizForm"
+            android:name=".Activities.Quiz"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.GatewayToQuizForm"
             android:exported="false" />
         <activity
             android:name=".Activities.CreateQuiz"

@@ -25,19 +25,15 @@ public class HomeQuizAdapter extends RecyclerView.Adapter<HomeQuizAdapter.ViewHo
 
         this.quiz_titile = quiz_titile;
         this.mOnItemListener=OnItemListener;
-
     }
-
     public class ViewHolderHome extends RecyclerView.ViewHolder implements View.OnClickListener{
         private TextView title;
-        private Button btn;
         onItemListener onItemListener;
 
         public ViewHolderHome(View view, onItemListener onItemListener) {
             super(view);
 
             title = (TextView) view.findViewById(R.id.quiz_title);
-            btn = (Button) view.findViewById(R.id.btn);
 
 
             this.onItemListener=onItemListener;
@@ -46,8 +42,10 @@ public class HomeQuizAdapter extends RecyclerView.Adapter<HomeQuizAdapter.ViewHo
 
         @Override
         public void onClick(View view) {
+
             onItemListener.onClicked(getAdapterPosition());
         }
+
     }
 
     // For onClickListener for item in recyclerview
@@ -67,12 +65,6 @@ public class HomeQuizAdapter extends RecyclerView.Adapter<HomeQuizAdapter.ViewHo
     public void onBindViewHolder(HomeQuizAdapter.ViewHolderHome holder,final int position) {
         //Log.d("TAG", Integer.toString(stlist.size()));
         holder.title.setText(quiz_titile.get(position));
-        holder.btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(v.getContext(), "worked",Toast.LENGTH_LONG);
-            }
-        });
     }
 
     @Override
